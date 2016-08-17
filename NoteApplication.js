@@ -36,7 +36,7 @@ class NoteApplication {
      * @param: note_id
     */
     getNoteByID(note_id) {
-        if (note_id < this.notes.length-1) {
+        if (note_id < this.notes.length) {
             console.log(this.notes[note_id]);
         }
         else console.log("Note ID not found");
