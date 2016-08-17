@@ -1,14 +1,14 @@
-# noteApplication
-Application for taking and keeping notes
+## noteApplication
+###Application for taking and keeping notes
 
-This aplication implements a simple note taking application. The functions and parameters are:
+###This aplication implements a simple note taking application. The functions and parameters are:
 
 - Create a constructor that does the following
     * Takes in a parameter author as the author of the note and saves this as an instance variable.
     * Create a notes list/array to store all the notes as an instance property.
     * Create the following functionality for the NotesApplication class
 
-- functions:
+- Functions:
     * `create(note_content)` - This function takes the note content as the parameter and adds it to the notes list of the object.
     * `listNotes()` - This function lists out each of the notes in the notes list for the note author.
 	* `get(note_id)` - This function takes a note_id which refers to the index of the note in the notes list and returns the content of that note as a string.
