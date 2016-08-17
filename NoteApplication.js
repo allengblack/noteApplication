@@ -15,7 +15,7 @@ class NoteApplication {
      * @param: note_content - the content of note to be saved
     */
     create(note_content) {
-        this.notes.push(note_content);
+        this.notes.push(note_content.toString());
     }
 
     /**
