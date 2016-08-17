@@ -1,51 +1,28 @@
-/*Takes in a parameter author as the author of the note and saves this as an instance variable.
-Create a notes list/array to store all the notes as an instance property.
-
-Create the following functionality for the NotesApplication class
-create(note_content) - This function takes the note content as the parameter and adds it to the notes list of the object.
-listNotes() - This function lists out each of the notes in the notes list in the following format. 
-The note_id parameter below represents the respective index of each of the items in the list, 
-the NOTE_CONTENT represent the note content and the author represents the note author.
-	
-	Note ID: [note_id]
-	[NOTE_CONTENT]
-
-	By Author [author]
-    
-    
-get(note_id) - This function takes a note_id which refers to the index of the note in the notes list and 
-returns the content of that note as a string.
-search(search_text) - This function take a search string, search_text and returns all the notes with that 
-text within it in the following format
-
-Showing results for search ‘[<search_text>]’
-
-Note ID: [note_id]
-	[NOTE_CONTENT]
-
-	By Author [author]
- 
-delete(note_id) - This function deletes the note at the index note_id of the notes list.
-edit(note_id, new_content) - This function replaces the content in the note at note_id with new_content.
-
-    
-*/
-
-
-
 
 class NoteApplication {
     
+    /** 
+     * Class constructor
+     * @param: author - author of all notes written
+    */
     constructor(author) {
         this.author = author;
         
         let notes = [];   
     }
     
+    /** 
+     * Cfunction create() to write new note
+     * @param: note_content - the content of note to be saved
+    */
     create(note_content) {
         this.notes.push(note_content);
     }
 
+    /**
+     * function listNotes()
+     * function to list notes by a particular author  
+     */
     listNotes() {
         for (i=0; i < notes.length; i++){
             console.log("Note ID = " + i);
@@ -54,13 +31,21 @@ class NoteApplication {
         }
     }
     
+    /** 
+     * function to get particular note by ID
+     * @param: note_id
+    */
     get(note_id) {
         console.log(notes[note_id]);
     }
     
+    /**
+     * function to print all notes that contain the specified search string
+     * @param: search_text
+     */
     search(search_text) {
         for (i=0; i < notes.length; i++){
-            if (): {
+            if ( notes[i].includes(search_text) ) {
                 console.log("Showing results for search [" + search_text + "]");
                 console.log("Note ID: " + i);
                 console.log(notes[i]);
@@ -68,6 +53,5 @@ class NoteApplication {
             }
         }
     }
-    
     
 }
