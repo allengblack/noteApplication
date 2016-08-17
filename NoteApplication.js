@@ -52,23 +52,6 @@ class NoteApplication {
             }
         }
     }
-
-     /**
-     * function to delete note with specified id
-     * @param: note_id
-     */
-    deleteNote(note_id) {
-        this.notes.splice(note_id, 1);
-        console.log("Note deleted.")
-    }
-    
-    /**
-     * function to edit a note of specified ID with new content
-     * @param: note_id
-     */
-    edit(note_id, new_content) {
-        this.notes[note_id] = new_content;
-    }
     
     /**
      * function to delete a note by its ID
@@ -80,11 +63,10 @@ class NoteApplication {
     }
     
     /**
-     * function to notes at specified index by ID with the new content provided
-     * @param: search_text
+     * function to edit a note of specified ID with new content
+     * @param: note_id
      */
     edit(note_id, new_content) {
         this.notes[note_id] = new_content;
     }
-    
 }
