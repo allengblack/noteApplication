@@ -6,9 +6,8 @@ class NoteApplication {
      * @param: author - author of all notes written
     */
     constructor(author) {
-        this.author = author;
-        
-        let notes = [];   
+        this.author = author;   
+        this.notes = [];   
     }
     
     /** 
@@ -24,10 +23,10 @@ class NoteApplication {
      * function to list notes by a particular author  
      */
     listNotes() {
-        for (i=0; i < notes.length; i++){
+        for (let i=0; i < this.notes.length; i++){
             console.log("Note ID = " + i);
-            console.log(this.notes(i));
-            console.log("By Author " + this.author);
+            console.log(this.notes[i]);
+            console.log("By Author " + this.author + '\n');
         }
     }
     
@@ -35,8 +34,8 @@ class NoteApplication {
      * function to get particular note by ID
      * @param: note_id
     */
-    get(note_id) {
-        console.log(notes[note_id]);
+    getNoteByID(note_id) {
+        console.log(this.notes[note_id]);
     }
     
     /**
@@ -45,10 +44,10 @@ class NoteApplication {
      */
     search(search_text) {
         for (i=0; i < notes.length; i++){
-            if ( notes[i].includes(search_text) ) {
+            if ( this.notes[i].includes(search_text) ) {
                 console.log("Showing results for search [" + search_text + "]");
                 console.log("Note ID: " + i);
-                console.log(notes[i]);
+                console.log(this.notes[i]);
                 console.log("By Author " + this.author);
             }
         }
@@ -58,7 +57,7 @@ class NoteApplication {
      * function to delete note with specified id
      * @param: note_id
      */
-    delete(note_id) {
+    deleteNote(note_id) {
         this.notes.splice(note_id, 1);
         console.log("Note deleted.")
     }
