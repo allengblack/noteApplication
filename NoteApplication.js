@@ -2,6 +2,7 @@
 class NoteApplication {
     
     /** 
+     * @constructor
      * Class constructor
      * @param: author - author of all notes written
     */
@@ -24,7 +25,7 @@ class NoteApplication {
      */
     listNotes() {
         for (let i=0; i < this.notes.length; i++){
-            console.log("Note ID = " + i);
+            console.log("Note ID: " + i);
             console.log(this.notes[i]);
             console.log("By Author " + this.author + '\n');
         }
@@ -35,7 +36,10 @@ class NoteApplication {
      * @param: note_id
     */
     getNoteByID(note_id) {
-        console.log(this.notes[note_id]);
+        if (note_id < this.notes.length-1) {
+            console.log(this.notes[note_id]);
+        }
+        else console.log("Note ID not found");
     }
     
     /**
@@ -58,8 +62,11 @@ class NoteApplication {
      * @param: note_id
      */
     deleteNoteByID(note_id) {
-        this.notes.splice(note_id, 1);
-        console.log("Note deleted.")
+        if (note_id < this.notes.length) {
+            this.notes.splice(note_id, 1);
+            console.log("Note deleted.");
+        }
+        else console.log("Note ID not found.");
     }
     
     /**
@@ -67,6 +74,9 @@ class NoteApplication {
      * @param: note_id
      */
     edit(note_id, new_content) {
-        this.notes[note_id] = new_content;
+        if (note_id < this.notes.length) {
+            this.notes[note_id] = new_content;
+        }
+        else console.log("Note ID not found.");
     }
 }
