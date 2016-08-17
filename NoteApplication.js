@@ -6,9 +6,8 @@ class NoteApplication {
      * @param: author - author of all notes written
     */
     constructor(author) {
-        this.author = author;
-        
-        let notes = [];   
+        this.author = author;   
+        this.notes = [];   
     }
     
     /** 
@@ -26,8 +25,8 @@ class NoteApplication {
     listNotes() {
         for (let i=0; i < this.notes.length; i++){
             console.log("Note ID = " + i);
-            console.log(this.notes(i));
-            console.log("By Author " + this.author);
+            console.log(this.notes[i]);
+            console.log("By Author " + this.author + '\n');
         }
     }
     
@@ -52,6 +51,23 @@ class NoteApplication {
                 console.log("By Author " + this.author);
             }
         }
+    }
+
+     /**
+     * function to delete note with specified id
+     * @param: note_id
+     */
+    deleteNote(note_id) {
+        this.notes.splice(note_id, 1);
+        console.log("Note deleted.")
+    }
+    
+    /**
+     * function to edit a note of specified ID with new content
+     * @param: note_id
+     */
+    edit(note_id, new_content) {
+        this.notes[note_id] = new_content;
     }
     
     /**
