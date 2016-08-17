@@ -24,7 +24,7 @@ class NoteApplication {
      * function to list notes by a particular author  
      */
     listNotes() {
-        for (i=0; i < notes.length; i++){
+        for (let i=0; i < this.notes.length; i++){
             console.log("Note ID = " + i);
             console.log(this.notes(i));
             console.log("By Author " + this.author);
@@ -35,8 +35,8 @@ class NoteApplication {
      * function to get particular note by ID
      * @param: note_id
     */
-    get(note_id) {
-        console.log(notes[note_id]);
+    getNoteByID(note_id) {
+        console.log(this.notes[note_id]);
     }
     
     /**
@@ -44,14 +44,31 @@ class NoteApplication {
      * @param: search_text
      */
     search(search_text) {
-        for (i=0; i < notes.length; i++){
-            if ( notes[i].includes(search_text) ) {
+        for (let i=0; i < this.notes.length; i++){
+            if ( this.notes[i].includes(search_text) ) {
                 console.log("Showing results for search [" + search_text + "]");
                 console.log("Note ID: " + i);
-                console.log(notes[i]);
+                console.log(this.notes[i]);
                 console.log("By Author " + this.author);
             }
         }
+    }
+    
+    /**
+     * function to delete a note by its ID
+     * @param: note_id
+     */
+    deleteNoteByID(note_id) {
+        this.notes.splice(note_id, 1);
+        console.log("Note deleted.")
+    }
+    
+    /**
+     * function to notes at specified index by ID with the new content provided
+     * @param: search_text
+     */
+    edit(note_id, new_content) {
+        this.notes[note_id] = new_content;
     }
     
 }
