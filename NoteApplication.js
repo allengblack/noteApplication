@@ -12,7 +12,7 @@ class NoteApplication {
     }
     
     /** 
-     * Cfunction create() to write new note
+     * function create() to write new note
      * @param: note_content - the content of note to be saved
     */
     create(note_content) {
