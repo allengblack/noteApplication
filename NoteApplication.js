@@ -11,6 +11,24 @@ the NOTE_CONTENT represent the note content and the author represents the note a
 	[NOTE_CONTENT]
 
 	By Author [author]
+    
+    
+get(note_id) - This function takes a note_id which refers to the index of the note in the notes list and 
+returns the content of that note as a string.
+search(search_text) - This function take a search string, search_text and returns all the notes with that 
+text within it in the following format
+
+Showing results for search ‘[<search_text>]’
+
+Note ID: [note_id]
+	[NOTE_CONTENT]
+
+	By Author [author]
+ 
+delete(note_id) - This function deletes the note at the index note_id of the notes list.
+edit(note_id, new_content) - This function replaces the content in the note at note_id with new_content.
+
+    
 */
 
 
@@ -32,7 +50,24 @@ class NoteApplication {
         for (i=0; i < notes.length; i++){
             console.log("Note ID = " + i);
             console.log(this.notes(i));
-            console.log("By " + this.author);
+            console.log("By Author " + this.author);
         }
     }
+    
+    get(note_id) {
+        console.log(notes[note_id]);
+    }
+    
+    search(search_text) {
+        for (i=0; i < notes.length; i++){
+            if (): {
+                console.log("Showing results for search [" + search_text + "]");
+                console.log("Note ID: " + i);
+                console.log(notes[i]);
+                console.log("By Author " + this.author);
+            }
+        }
+    }
+    
+    
 }
